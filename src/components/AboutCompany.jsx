@@ -1,12 +1,14 @@
 import { Globe, ShieldCheck, Users, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function AboutCompany() {
   return (
     <div className="bg-slate-950 text-white">
-      <section id="about" className="relative py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div>
+      <section id="about" className="relative py-28">
+        <div className="pointer-events-none absolute inset-0 bg-[conic-gradient(from_140deg_at_20%_30%,rgba(34,211,238,0.08),transparent_30%),radial-gradient(50%_60%_at_80%_10%,rgba(168,85,247,0.12),transparent)]" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">About NebulaHost</h2>
               <p className="mt-4 text-white/70">
                 We build fast, reliable, and secure infrastructure tailored for gaming communities. Our platform automates the heavy lifting so you can focus on playing, not configuring.
@@ -17,9 +19,9 @@ export default function AboutCompany() {
                 <AboutPoint icon={<Users size={18} />} title="Community tools" desc="One-click modpacks, backups, and role-based access." />
                 <AboutPoint icon={<Award size={18} />} title="SLA-backed" desc="99.9% uptime with transparent status." />
               </dl>
-            </div>
-            <div>
-              <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-indigo-900/30 to-fuchsia-900/20 p-6">
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+              <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-indigo-900/40 to-fuchsia-900/20 p-6">
                 <div className="grid grid-cols-2 gap-6 text-center">
                   <Stat number="45+" label="Global POPs" />
                   <Stat number="12k+" label="Active Servers" />
@@ -27,14 +29,15 @@ export default function AboutCompany() {
                   <Stat number="99.9%" label="Uptime" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <section id="company" className="relative py-24 border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+      <section id="company" className="relative py-28 border-t border-white/10">
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(70%_50%_at_50%_100%,rgba(99,102,241,0.15),transparent)]" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-3xl">
             <h3 className="text-3xl font-bold tracking-tight">Our Company</h3>
             <p className="mt-4 text-white/70">
               Founded by engineers and gamers, NebulaHost blends cutting-edge infrastructure with player-first design. We operate our own bare-metal fleet with the latest AMD and Intel processors, NVMe storage, and premium bandwidth providers.
@@ -47,7 +50,7 @@ export default function AboutCompany() {
               <CompanyCard title="Values" text="Trust, performance, transparency, and community." />
               <CompanyCard title="Support" text="24/7 real-human support with sub-5 minute response times." />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
